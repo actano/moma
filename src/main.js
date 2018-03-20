@@ -5,6 +5,7 @@ import chalk from 'chalk'
 import forEach from 'lodash/forEach'
 
 import runTarget from './run-target'
+import listTargets from './list-targets'
 
 // eslint-disable-next-line consistent-return
 const handleErrors = fn => async (...args) => {
@@ -56,5 +57,9 @@ program
   .action(handleErrors(async () => {
     await runTargets(['base'])
   }))
+
+program
+  .command('ls')
+  .action(handleErrors(listTargets))
 
 program.parse(process.argv)
