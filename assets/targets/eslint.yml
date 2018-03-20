@@ -1,0 +1,26 @@
+id: eslint
+info: |
+  A `lint` script was added to package.json. Please specify all directories which should be linted
+  in the package.json config section. E.g.:
+    {
+      "config": {
+        "lint_dirs": "src test"
+      }
+    }
+package.json:
+  devDependencies:
+    - eslint
+    - eslint-config-actano-base
+    - eslint-plugin-import
+    - babel-eslint
+  scripts:
+    lint: eslint ${npm_package_config_lint_dirs}
+eslint:
+  root: true
+  extends: actano-base
+  parser: babel-eslint
+  overrides:
+    - files:
+        - 'test/**/*.js'
+      env:
+          mocha: true

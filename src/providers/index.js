@@ -3,6 +3,7 @@ import TravisProvider from './travis'
 import BabelProvider from './babel'
 import GitignoreProvider from './gitignore'
 import MochaProvider from './mocha'
+import EslintProvider from './eslint'
 
 const providerList = [
   PackageJsonProvider,
@@ -10,6 +11,7 @@ const providerList = [
   BabelProvider,
   GitignoreProvider,
   MochaProvider,
+  EslintProvider,
 ]
 
 const providerMap = providerList.reduce(
