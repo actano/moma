@@ -1,0 +1,22 @@
+id: babel
+package.json:
+  devDependencies:
+    - babel-plugin-transform-object-rest-spread
+    - babel-preset-env
+    - babel-cli
+    - babel-register
+  scripts:
+    build:babel: babel --out-dir lib src
+    clean:babel: rm -rf lib
+gitignore:
+  - lib/
+babel:
+  plugins:
+    - transform-object-rest-spread
+  presets:
+    - - env
+      - targets:
+          node: current
+mocha:
+  opts:
+    - '--require babel-register'

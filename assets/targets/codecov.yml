@@ -1,0 +1,12 @@
+id: codecov
+depends_on: coverage
+package.json:
+  devDependencies:
+  - codecov
+  scripts:
+    coverage:codecov: 'npm run coverage && nyc report --reporter=text-lcov > coverage.lcov && codecov'
+travis:
+  after_success:
+  - npm run coverage:codecov
+readme:
+  badge: '[![codecov](https://codecov.io/gh/actano/rplan-config/branch/master/graph/badge.svg)](https://codecov.io/gh/actano/rplan-config)'

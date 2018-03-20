@@ -1,0 +1,10 @@
+root: true
+extends: actano-base
+parser: babel-eslint
+rules:
+  no-console: 'off'
+  no-return-await: 'off'
+  import/prefer-default-export: 'off'
+  function-paren-newline:
+    - error
+    - consistent

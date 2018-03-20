@@ -1,0 +1,12 @@
+id: greenkeeper
+info: |
+  Enable Greenkeeper for this repository in the Greenkeeper Github App.
+  If Travis CI is used: Create a Github access token with push access to this repository. Add the token to the Travis config by running: `travis encrypt GH_TOKEN=<token> --add`.
+  Greenkeeper will automatically create a new PR as initialization. Please follow the steps mentioned there.
+travis:
+  before_install:
+  - yarn global add greenkeeper-lockfile@1
+  before_script:
+  - greenkeeper-lockfile-update
+  after_script:
+  - greenkeeper-lockfile-upload

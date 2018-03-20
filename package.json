@@ -1,0 +1,36 @@
+{
+  "name": "moma",
+  "version": "0.0.1",
+  "bin": "./lib/main.js",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "assets"
+  ],
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "chalk": "^2.3.2",
+    "commander": "^2.15.1",
+    "detect-indent": "^5.0.0",
+    "fast-json-patch": "^2.0.6",
+    "js-yaml": "^3.11.0",
+    "lodash": "^4.17.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.19.0",
+    "eslint-config-actano-base": "^3.0.0",
+    "eslint-plugin-import": "^2.9.0"
+  },
+  "scripts": {
+    "build": "npm run build:babel",
+    "build:babel": "babel --out-dir lib src",
+    "ci": "npm run clean && npm run lint && npm run build && npm run test",
+    "clean": "npm run clean:babel",
+    "clean:babel": "rm -rf lib"
+  }
+}

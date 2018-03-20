@@ -1,0 +1,13 @@
+id: coverage
+info: |
+  The coverage template assumes that a `test` script exists.
+package.json:
+  devDependencies:
+  - nyc
+  scripts:
+    clean:coverage: 'rm -rf coverage .nyc_output coverage.lcov'
+    coverage: 'npm run clean:coverage; nyc --reporter=text npm run test'
+    coverage:html: 'npm run clean:coverage; nyc --reporter=html npm run test; open coverage/index.html'
+gitignore:
+  - .nyc_output/
+  - coverage/
